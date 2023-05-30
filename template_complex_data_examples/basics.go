@@ -13,6 +13,11 @@ type Person struct {
 	Age  int
 }
 
+type Address struct {
+	City  string
+	State string
+}
+
 func init() {
 	tmpl = template.Must(template.ParseGlob("template_complex_data_examples/templates/*.html"))
 }
@@ -37,6 +42,35 @@ func RenderHtml() {
 		Age:  30,
 	}
 	if err := tmpl.ExecuteTemplate(os.Stdout, "struct.html", strct); err != nil {
+		log.Fatalln("Error executing template", err)
+	}
+
+	personsData := struct {
+		Persons   []Person
+		Addresses []Address
+	}{
+		Persons: []Person{
+			{
+				Name: "Pranav",
+				Age:  30,
+			},
+			{
+				Name: "Aishwarya",
+				Age:  25,
+			},
+		},
+		Addresses: []Address{
+			{
+				City:  "Kolhapur",
+				State: "Maharashtra",
+			},
+			{
+				City:  "Kolhapur",
+				State: "Maharashtra",
+			},
+		},
+	}
+	if err := tmpl.ExecuteTemplate(os.Stdout, "complex.html", personsData); err != nil {
 		log.Fatalln("Error executing template", err)
 	}
 }
