@@ -5,9 +5,12 @@ import (
 	// templateexample1 "github.com/pranavmanole26/web_development_practice/template_example_1"
 	// templateexample2 "github.com/pranavmanole26/web_development_practice/template_example_2"
 	// templateexample3 "github.com/pranavmanole26/web_development_practice/template_example_3"
-	templateexample4 "github.com/pranavmanole26/web_development_practice/template_example_4"
+	// templateexample4 "github.com/pranavmanole26/web_development_practice/template_example_4"
+	// templatedataexample1 "github.com/pranavmanole26/web_development_practice/template_data_example_1"
+	// templatedataexample2 "github.com/pranavmanole26/web_development_practice/template_data_example_2"
+	templatecomplexdataexamples "github.com/pranavmanole26/web_development_practice/template_complex_data_examples"
 )
 
 func main() {
-	templateexample4.RenderHtml()
+	templatecomplexdataexamples.RenderHtml()
 }
